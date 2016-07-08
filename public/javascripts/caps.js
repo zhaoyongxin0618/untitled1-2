@@ -33,7 +33,7 @@ exports.android19 = {
   deviceName: '214f5933',
   unicodeKeyboard: true,
   resetKeyboard: true,
-  app: '/usr/local/lib/node_modules/npm/untitled1/public/stylesheets/yzj_7.0.4_release.apk' // will be set later
+  app: '/Users/kingdee/Desktop/untitled1 2/public/stylesheets/yzj_7.0.7_release.apk' // will be set later
 };
 
 exports.selendroid16 = {
