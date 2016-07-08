@@ -24,7 +24,6 @@ exports.android18 = {
   deviceName: 'Android Emulator',
   app: undefined // will be set later
 };
-
 exports.android19 = {
   browserName: '',
   'appium-version': '1.5.3',
@@ -33,7 +32,7 @@ exports.android19 = {
   deviceName: '214f5933',
   unicodeKeyboard: true,
   resetKeyboard: true,
-  app: '/Users/kingdee/Desktop/untitled1 2/public/stylesheets/yzj_7.0.7_release.apk' // will be set later
+  app:'/Users/kingdee/Desktop/untitled1 2/public/stylesheets/yzj_7.0.7_release.apk' // will be set later
 };
 
 exports.selendroid16 = {
