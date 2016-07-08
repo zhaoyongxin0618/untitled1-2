@@ -167,166 +167,166 @@ describe("android webview", function () {
 
 
     });
-    it("send emoji", function () {
-        function sendMessage() {
-            return driver
-                .elementsByClassName('android.widget.TextView')
-                .then(function (els) {
-                    return Q.all([
-                        els[els.length-8].getLocation(),
-                        els[0].getLocation()
-                    ]).then(function (locs) {
-                        return driver.swipe({
-                            startX: locs[0].x, startY: locs[0].y,
-                            endX: locs[1].x, endY: locs[1].y,
-                            duration: 800
-                        });
-                    });
-                }).elementByXPath('//android.widget.TextView[@text=\'赵永鑫\']')
-                .catch(function () {
-                    return sendMessage();
-                });
-        }
-        function sendEmoji() {
-            return driver.setImplicitWaitTimeout(10000)
-                .elementsByClassName('android.widget.ImageView')
-                .then(function (els) {
-                    return Q.all([
-                        els[els.length-11].getLocation(),
-                        els[els.length-17].getLocation()
-                    ]).then(function (locs) {
-                        return driver.swipe({
-                            startX: locs[0].x, startY: locs[0].y,
-                            endX: locs[1].x, endY: locs[1].y,
-                            duration: 800
-                        });
-                    });
-                })
-                .elementsByClassName('android.widget.ImageView')
-                .then(function(els){
-                    return els[els.length-15];
-                })
-                .click()
-                .elementById('com.kdweibo.client:id/chat_bottom_btn_send')
-                .click()
-                .catch(function(){
-                    console.log('not find send button');
-                });
-        }
-
-        return driver
-            .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
-            .click()
-            .then(sendMessage)
-            .click()
-            .sleep(1000)
-            .elementById('com.kdweibo.client:id/sendMessage_btn')
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_btn_face')
-            .click()
-            .then(sendEmoji)
-            .sleep(10000).back();
-
-
-    });
-    it("tack a picture", function () {
-        function sendMessage() {
-            return driver
-                .elementsByClassName('android.widget.TextView')
-                .then(function (els) {
-                    return Q.all([
-                        els[els.length-8].getLocation(),
-                        els[0].getLocation()
-                    ]).then(function (locs) {
-                        return driver.swipe({
-                            startX: locs[0].x, startY: locs[0].y,
-                            endX: locs[1].x, endY: locs[1].y,
-                            duration: 800
-                        });
-                    });
-                }).elementByXPath('//android.widget.TextView[@text=\'赵永鑫\']')
-                .catch(function () {
-                    return sendMessage();
-                });
-        }
-
-        return driver
-            .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
-            .click()
-            .then(sendMessage)
-            .click()
-            .sleep(1000)
-            .elementById('com.kdweibo.client:id/sendMessage_btn')
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_btn_more')
-            .click()
-            .elementsByClassName('android.widget.RelativeLayout')
-            .then(function(els){
-                return els[els.length-7];
-            })
-            .click()
-            .elementById('com.android.camera:id/v6_shutter_button_internal')
-            .click()
-            .elementById('com.android.camera:id/v6_btn_done')
-            .click()
-            .elementById('com.kdweibo.client:id/img_save')
-            .click()
-            .sleep(10000).back();
-
-
-    });
-    it("read no trace", function () {
-        function sendMessage() {
-            return driver
-                .elementsByClassName('android.widget.TextView')
-                .then(function (els) {
-                    return Q.all([
-                        els[els.length-8].getLocation(),
-                        els[0].getLocation()
-                    ]).then(function (locs) {
-                        return driver.swipe({
-                            startX: locs[0].x, startY: locs[0].y,
-                            endX: locs[1].x, endY: locs[1].y,
-                            duration: 800
-                        });
-                    });
-                }).elementByXPath('//android.widget.TextView[@text=\'赵永鑫\']')
-                .catch(function () {
-                    return sendMessage();
-                });
-        }
-
-        return driver
-            .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
-            .click()
-            .then(sendMessage)
-            .click()
-            .sleep(1000)
-            .elementById('com.kdweibo.client:id/sendMessage_btn')
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_btn_more')
-            .click()
-            .elementsByClassName('android.widget.RelativeLayout')
-            .then(function(els){
-                return els[els.length-6];
-            })
-            .click()
-            .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
-            .click()
-            .clear()
-            .sendKeys('阅后即焚')
-            .elementById('com.kdweibo.client:id/chat_bottom_btn_send')
-            .click()
-            .sleep(10000).back();
-
-
-    });
+    //it("send emoji", function () {
+    //    function sendMessage() {
+    //        return driver
+    //            .elementsByClassName('android.widget.TextView')
+    //            .then(function (els) {
+    //                return Q.all([
+    //                    els[els.length-8].getLocation(),
+    //                    els[0].getLocation()
+    //                ]).then(function (locs) {
+    //                    return driver.swipe({
+    //                        startX: locs[0].x, startY: locs[0].y,
+    //                        endX: locs[1].x, endY: locs[1].y,
+    //                        duration: 800
+    //                    });
+    //                });
+    //            }).elementByXPath('//android.widget.TextView[@text=\'赵永鑫\']')
+    //            .catch(function () {
+    //                return sendMessage();
+    //            });
+    //    }
+    //    function sendEmoji() {
+    //        return driver.setImplicitWaitTimeout(10000)
+    //            .elementsByClassName('android.widget.ImageView')
+    //            .then(function (els) {
+    //                return Q.all([
+    //                    els[els.length-11].getLocation(),
+    //                    els[els.length-17].getLocation()
+    //                ]).then(function (locs) {
+    //                    return driver.swipe({
+    //                        startX: locs[0].x, startY: locs[0].y,
+    //                        endX: locs[1].x, endY: locs[1].y,
+    //                        duration: 800
+    //                    });
+    //                });
+    //            })
+    //            .elementsByClassName('android.widget.ImageView')
+    //            .then(function(els){
+    //                return els[els.length-15];
+    //            })
+    //            .click()
+    //            .elementById('com.kdweibo.client:id/chat_bottom_btn_send')
+    //            .click()
+    //            .catch(function(){
+    //                console.log('not find send button');
+    //            });
+    //    }
+    //
+    //    return driver
+    //        .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
+    //        .click()
+    //        .then(sendMessage)
+    //        .click()
+    //        .sleep(1000)
+    //        .elementById('com.kdweibo.client:id/sendMessage_btn')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_btn_face')
+    //        .click()
+    //        .then(sendEmoji)
+    //        .sleep(10000).back();
+    //
+    //
+    //});
+    //it("tack a picture", function () {
+    //    function sendMessage() {
+    //        return driver
+    //            .elementsByClassName('android.widget.TextView')
+    //            .then(function (els) {
+    //                return Q.all([
+    //                    els[els.length-8].getLocation(),
+    //                    els[0].getLocation()
+    //                ]).then(function (locs) {
+    //                    return driver.swipe({
+    //                        startX: locs[0].x, startY: locs[0].y,
+    //                        endX: locs[1].x, endY: locs[1].y,
+    //                        duration: 800
+    //                    });
+    //                });
+    //            }).elementByXPath('//android.widget.TextView[@text=\'赵永鑫\']')
+    //            .catch(function () {
+    //                return sendMessage();
+    //            });
+    //    }
+    //
+    //    return driver
+    //        .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
+    //        .click()
+    //        .then(sendMessage)
+    //        .click()
+    //        .sleep(1000)
+    //        .elementById('com.kdweibo.client:id/sendMessage_btn')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_btn_more')
+    //        .click()
+    //        .elementsByClassName('android.widget.RelativeLayout')
+    //        .then(function(els){
+    //            return els[els.length-7];
+    //        })
+    //        .click()
+    //        .elementById('com.android.camera:id/v6_shutter_button_internal')
+    //        .click()
+    //        .elementById('com.android.camera:id/v6_btn_done')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/img_save')
+    //        .click()
+    //        .sleep(10000).back();
+    //
+    //
+    //});
+    //it("read no trace", function () {
+    //    function sendMessage() {
+    //        return driver
+    //            .elementsByClassName('android.widget.TextView')
+    //            .then(function (els) {
+    //                return Q.all([
+    //                    els[els.length-8].getLocation(),
+    //                    els[0].getLocation()
+    //                ]).then(function (locs) {
+    //                    return driver.swipe({
+    //                        startX: locs[0].x, startY: locs[0].y,
+    //                        endX: locs[1].x, endY: locs[1].y,
+    //                        duration: 800
+    //                    });
+    //                });
+    //            }).elementByXPath('//android.widget.TextView[@text=\'赵永鑫\']')
+    //            .catch(function () {
+    //                return sendMessage();
+    //            });
+    //    }
+    //
+    //    return driver
+    //        .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
+    //        .click()
+    //        .then(sendMessage)
+    //        .click()
+    //        .sleep(1000)
+    //        .elementById('com.kdweibo.client:id/sendMessage_btn')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_btn_more')
+    //        .click()
+    //        .elementsByClassName('android.widget.RelativeLayout')
+    //        .then(function(els){
+    //            return els[els.length-6];
+    //        })
+    //        .click()
+    //        .elementById('com.kdweibo.client:id/chat_bottom_edit_input')
+    //        .click()
+    //        .clear()
+    //        .sendKeys('阅后即焚')
+    //        .elementById('com.kdweibo.client:id/chat_bottom_btn_send')
+    //        .click()
+    //        .sleep(10000).back();
+    //
+    //
+    //});
     // it("address book", function () {
     //     function lookStaff() {
     //         return driver
