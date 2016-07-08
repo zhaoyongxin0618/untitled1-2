@@ -31,8 +31,8 @@ exports.android19 = {
   platformName: 'Android',
   platformVersion: '4.4.4',
   deviceName: '214f5933',
-  //unicodeKeyboard: true,
-  //resetKeyboard: true,
+  unicodeKeyboard: true,
+  resetKeyboard: true,
   app: '/usr/local/lib/node_modules/npm/untitled1/public/stylesheets/yzj_7.0.4_release.apk' // will be set later
 };
 
