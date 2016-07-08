@@ -32,7 +32,7 @@ exports.android19 = {
   deviceName: '214f5933',
   unicodeKeyboard: true,
   resetKeyboard: true,
-  noReset:true,
+  //noReset:true,若app存在不再次安装，但保持上一次登陆状态
   app:'/Users/kingdee/Desktop/untitled1 2/public/stylesheets/yzj_7.0.7_release.apk' // will be set later
 };
 
