@@ -327,45 +327,45 @@ describe("android webview", function () {
 
 
     });
-     it("address book", function () {
-         function lookStaff() {
-             return driver
-                 .elementsByClassName('android.widget.TextView')
-                 .then(function (els) {
-                     return Q.all([
-                         els[els.length-1].getLocation(),
-                         els[0].getLocation()
-                     ]).then(function (locs) {
-                         return driver.swipe({
-                             startX: locs[0].x, startY: locs[0].y,
-                             endX: locs[1].x, endY: locs[1].y,
-                             duration: 800
-                         });
-                     });
-                 }).elementByXPath('//android.widget.TextView[@text=\'卢亮\']')
-                 .catch(function () {
-                     return lookStaff();
-                 });
-         }
-
-         return driver
-             .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
-             .click()
-             .elementByXPath('//android.widget.TextView[@text=\'组织架构\']')
-             .click()
-             .sleep(1000)
-             .elementByXPath('//android.widget.TextView[@text=\'集团总部\']')
-             .click()
-             .elementByXPath('//android.widget.TextView[@text=\'大数据云平台部\']')
-             .click()
-             .sleep(1000)
-             .elementByXPath('//android.widget.TextView[@text=\'研发共享服务部\']')
-             .click().sleep(1000)
-             .then(lookStaff).sleep(10000)
-             .elementByXPath('//android.widget.TextView[@text=\'关闭\']')
-             .click()
-             .back().sleep(1000)
-             .back();
-
-     });
+     //it("address book", function () {
+     //    function lookStaff() {
+     //        return driver
+     //            .elementsByClassName('android.widget.TextView')
+     //            .then(function (els) {
+     //                return Q.all([
+     //                    els[els.length-1].getLocation(),
+     //                    els[0].getLocation()
+     //                ]).then(function (locs) {
+     //                    return driver.swipe({
+     //                        startX: locs[0].x, startY: locs[0].y,
+     //                        endX: locs[1].x, endY: locs[1].y,
+     //                        duration: 800
+     //                    });
+     //                });
+     //            }).elementByXPath('//android.widget.TextView[@text=\'卢亮\']')
+     //            .catch(function () {
+     //                return lookStaff();
+     //            });
+     //    }
+     //
+     //    return driver
+     //        .elementByXPath('//android.widget.TextView[@text=\'通讯录\']')
+     //        .click()
+     //        .elementByXPath('//android.widget.TextView[@text=\'组织架构\']')
+     //        .click()
+     //        .sleep(1000)
+     //        .elementByXPath('//android.widget.TextView[@text=\'集团总部\']')
+     //        .click()
+     //        .elementByXPath('//android.widget.TextView[@text=\'大数据云平台部\']')
+     //        .click()
+     //        .sleep(1000)
+     //        .elementByXPath('//android.widget.TextView[@text=\'研发共享服务部\']')
+     //        .click().sleep(1000)
+     //        .then(lookStaff).sleep(10000)
+     //        .elementByXPath('//android.widget.TextView[@text=\'关闭\']')
+     //        .click()
+     //        .back().sleep(1000)
+     //        .back();
+     //
+     //});
 });
